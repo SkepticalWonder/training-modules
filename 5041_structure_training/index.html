@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>5041 Structure & Fabrication Training</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Droid+Sans:wght@400;700&family=Droid+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #980000;
+      --black: #000000;
+      --gray: #666666;
+      --light: #f3f3f3;
+      --white: #ffffff;
+    }
+    .reveal { font-family: 'Droid Serif', Georgia, serif; color: var(--black); }
+    .reveal h1, .reveal h2, .reveal h3 { font-family: 'Droid Sans', Arial, sans-serif; font-weight: 700; color: var(--black); text-transform: none; }
+    .reveal .cytitle { font-family: 'Audiowide', 'Droid Sans', sans-serif; letter-spacing: .02em; }
+    .reveal h1 { font-size: 2.1em; }
+    .reveal h2 { font-size: 1.45em; }
+    .reveal h3 { font-size: .95em; }
+    .reveal p, .reveal li { font-size: .58em; line-height: 1.28; }
+    .reveal ul { margin-left: 1.1em; }
+    .reveal section { text-align: left; }
+    .reveal .center { text-align: center; }
+    .reveal .small { font-size: .48em; }
+    .reveal .micro { font-size: .38em; }
+    .reveal .tag { display:inline-block; background: var(--red); color: white; font-family:'Droid Sans'; font-weight:700; padding:.18em .45em; margin-bottom:.4em; }
+    .reveal .stripe { height: 10px; background: linear-gradient(90deg, var(--red) 0 35%, var(--black) 35% 65%, var(--gray) 65% 100%); margin: .35em 0 .5em; }
+    .reveal .bar { height: 6px; background: var(--red); width: 45%; margin: .3em 0 .6em; }
+    .reveal .bar.gray { background: var(--gray); width: 65%; }
+    .reveal .rule { height: 3px; background: var(--black); margin: .2em 0 .7em; }
+    .reveal .two { display:grid; grid-template-columns: 1fr 1fr; gap: 1.1em; align-items:start; }
+    .reveal .three { display:grid; grid-template-columns: repeat(3,1fr); gap:.7em; }
+    .reveal .panel { background: var(--light); padding:.75em; border-left: 12px solid var(--red); }
+    .reveal .panel.dark { background: var(--black); color: white; border-left-color: var(--red); }
+    .reveal .panel.dark h3, .reveal .panel.dark p, .reveal .panel.dark li { color:white; }
+    .reveal .slantTop::before { content:""; position:absolute; left:0; top:0; border-style:solid; border-width: 0 0 105px 470px; border-color: transparent transparent transparent var(--black); z-index:-1; }
+    .reveal .redCorner::after { content:""; position:absolute; right:0; bottom:0; border-style:solid; border-width: 115px 430px 0 0; border-color: transparent var(--red) transparent transparent; z-index:-1; }
+    .reveal .bigq { font-family:'Droid Sans'; font-size:1.05em; font-weight:700; line-height:1.1; }
+    .reveal .checklist li { list-style: '☐  '; margin: .14em 0; }
+    .reveal .do { border-left-color: var(--red); }
+    .reveal .warn { border-left-color: var(--gray); }
+    .reveal .activity { background: var(--black); color: white; padding: .75em 1em; }
+    .reveal .activity h2, .reveal .activity h3, .reveal .activity p, .reveal .activity li { color:white; }
+    .reveal .activity .tag { background: var(--white); color: var(--black); }
+    .reveal .foot { position:absolute; bottom: 18px; left: 35px; right: 35px; font-family:'Droid Sans'; font-size:.28em; color:var(--gray); display:flex; justify-content:space-between; }
+    .reveal .gearbox { font-family:'Droid Sans'; font-weight:700; background:var(--red); color:white; padding:.15em .35em; }
+    .reveal .diagram { font-family:'Droid Sans'; font-size:.5em; display:flex; align-items:center; gap:.35em; margin:.3em 0; }
+    .reveal .box { background:white; border:4px solid var(--black); padding:.4em .55em; }
+    .reveal .arrow { flex:1; border-top:5px solid var(--gray); position:relative; }
+    .reveal .arrow::after { content:""; position:absolute; right:-1px; top:-10px; border-left:16px solid var(--gray); border-top:8px solid transparent; border-bottom:8px solid transparent; }
+    .reveal .columns-tight { display:grid; grid-template-columns: 1.2fr .8fr; gap:.8em; }
+    @media print { .reveal .foot { display:none; } }
+  </style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+<section class="center slantTop redCorner">
+  <h1 class="cytitle">Structure & Fabrication</h1>
+  <div class="stripe"></div>
+  <h2>FIRST Robotics Competition Training</h2>
+  <p><strong>Team 5041 CyBear Robotics</strong></p>
+  <p class="small">Build robots that are strong, stiff, light, accurate, repairable, and competition ready.</p>
+  <div class="foot"><span>Everyone has a place here</span><span>5041 CyBear Robotics</span></div>
+</section>
+
+<section>
+  <span class="tag">Module Goals</span>
+  <h2>By the end, students should be able to:</h2>
+  <div class="bar"></div>
+  <ul>
+    <li>Explain the difference between strength, stiffness, weight, and accuracy.</li>
+    <li>Trace load paths through a robot frame or mechanism.</li>
+    <li>Choose fabrication methods that match team tools and time.</li>
+    <li>Design for bumpers, wiring, maintenance, and impact before final build.</li>
+    <li>Use CAD as a communication, checking, and fabrication tool.</li>
+  </ul>
+</section>
+
+<section>
+  <span class="tag">The Big Checklist</span>
+  <h2>Every design review starts here</h2>
+  <div class="two">
+    <ul class="checklist">
+      <li>Strong enough?</li><li>Stiff enough?</li><li>Light enough?</li><li>Buildable accurately?</li><li>Repairable quickly?</li>
+    </ul>
+    <ul class="checklist">
+      <li>Safe wire and mechanism space?</li><li>Survive defense?</li><li>Bumper room?</li><li>Current FRC rules?</li><li>Ready for inspection?</li>
+    </ul>
+  </div>
+  <p class="small"><strong>Training habit:</strong> ask these before CAD is “done,” before parts are cut, and again before competition.</p>
+</section>
+
+<section>
+  <section>
+    <span class="tag">1. Frame First</span>
+    <h2>Start with the frame and load paths</h2>
+    <div class="bar"></div>
+    <p class="bigq">“When this gets hit, where does the force go?”</p>
+    <div class="diagram"><div class="box">Defense hit</div><div class="arrow"></div><div class="box">Bumper</div><div class="arrow"></div><div class="box">Frame rail</div><div class="arrow"></div><div class="box">Crossmember</div></div>
+    <p class="small">If the answer is “through a tiny bracket,” redesign it.</p>
+  </section>
+  <section>
+    <h2>Frame design rules of thumb</h2>
+    <div class="two">
+      <div class="panel do"><h3>Do</h3><ul><li>Keep the frame square.</li><li>Use crossmembers and gussets.</li><li>Mount bumpers early in the design.</li><li>Route forces through strong members.</li></ul></div>
+      <div class="panel warn"><h3>Avoid</h3><ul><li>Unsupported brackets carrying major loads.</li><li>Hanging heavy mechanisms from weak plates.</li><li>Designing bumper mounts after the robot is assembled.</li><li>Forcing misaligned parts together.</li></ul></div>
+    </div>
+  </section>
+  <section class="activity">
+    <span class="tag">Activity</span>
+    <h2>Load Path Sketch</h2>
+    <p>In pairs, pick one robot mechanism. Draw where the force travels during a hit, shot, climb, or intake collision.</p>
+    <ul><li>Circle the weak link.</li><li>Add one gusset, crossmember, or mount change.</li><li>Share the before and after load path.</li></ul>
+  </section>
+</section>
+
+<section>
+  <section>
+    <span class="tag">2. Stiffness</span>
+    <h2>Accuracy needs stiffness</h2>
+    <div class="bar gray"></div>
+    <p>Strong parts do not always make an accurate robot. A part can survive and still flex enough to miss shots, bind an elevator, or throw off alignment.</p>
+  </section>
+  <section>
+    <h2>Areas that must stay stiff</h2>
+    <div class="three">
+      <div class="panel"><h3>Shooters</h3><p>Consistent angle and wheel spacing.</p></div>
+      <div class="panel"><h3>Elevators / Arms</h3><p>Parallel rails, stable pivots, hard stops.</p></div>
+      <div class="panel"><h3>Vision / Sensors</h3><p>No wobble, protected mounting.</p></div>
+      <div class="panel"><h3>Swerve / Drivetrain</h3><p>Square frame and rigid module mounts.</p></div>
+      <div class="panel"><h3>Belts / Chains</h3><p>Aligned shafts and tension control.</p></div>
+      <div class="panel"><h3>Climbers</h3><p>Loads travel into the frame, not thin side plates.</p></div>
+    </div>
+  </section>
+  <section>
+    <h2>Stiffness quick fixes</h2>
+    <ul>
+      <li>Shorten unsupported spans.</li>
+      <li>Add triangles: gussets, diagonal bracing, boxed structures.</li>
+      <li>Use tube instead of flat plate where possible.</li>
+      <li>Support shafts on both sides.</li>
+      <li>Use hard stops instead of relying on motor limits alone.</li>
+    </ul>
+  </section>
+</section>
+
+<section>
+  <section>
+    <span class="tag">3. Prototype First</span>
+    <h2>Do not spend build season proving a guess</h2>
+    <div class="diagram"><div class="box">Question</div><div class="arrow"></div><div class="box">Prototype</div><div class="arrow"></div><div class="box">Measure</div><div class="arrow"></div><div class="box">CAD</div></div>
+    <p class="small">Prototype the risky part: intake geometry, shooter compression, arm reach, elevator clearance, or game piece path.</p>
+  </section>
+  <section class="activity">
+    <span class="tag">Decision Point</span>
+    <h2>What should be prototyped?</h2>
+    <p>Your team has three ideas for an intake. You have one evening. Decide what you test first.</p>
+    <ul><li>What is unknown?</li><li>What can be tested with scrap?</li><li>What measurement decides the winner?</li></ul>
+  </section>
+</section>
+
+<section>
+  <section>
+    <span class="tag">4. Maintenance</span>
+    <h2>Design so pit repairs are boring</h2>
+    <div class="two">
+      <div><p>Great robots fail less, but they still get hit. Good structure makes broken parts easy to reach, remove, and replace.</p></div>
+      <ul class="checklist"><li>Battery access</li><li>Main breaker access</li><li>Motor controller access</li><li>Removable panels</li><li>Clear wire paths</li><li>Replaceable intake parts</li></ul>
+    </div>
+  </section>
+  <section>
+    <h2>Standardize to move faster</h2>
+    <ul>
+      <li>Use repeated bolt and rivet sizes.</li>
+      <li>Use common gussets and brackets.</li>
+      <li>Label wires, tubes, and devices.</li>
+      <li>Keep spare brackets, rollers, shafts, and intake pieces ready.</li>
+      <li>Use the same hole patterns when possible.</li>
+    </ul>
+  </section>
+  <section class="activity">
+    <span class="tag">Pit Drill</span>
+    <h2>Three-minute repair check</h2>
+    <p>Look at a mechanism and ask: “Could we replace this between matches?”</p>
+    <ul><li>What tool is needed?</li><li>What must be removed first?</li><li>What spare part should exist?</li></ul>
+  </section>
+</section>
+
+<section>
+  <section>
+    <span class="tag">5. Impacts</span>
+    <h2>Anything outside the frame must have a plan</h2>
+    <div class="panel dark"><p class="bigq">Strong, flexible, or easy to replace.</p></div>
+  </section>
+  <section>
+    <h2>Protect the vulnerable parts</h2>
+    <ul>
+      <li>Keep wheels, belts, chains, sensors, and wires protected.</li>
+      <li>Keep fragile mechanisms inside the frame perimeter when possible.</li>
+      <li>Use hard stops to prevent arms and intakes from overtraveling.</li>
+      <li>Avoid long, thin, unsupported parts sticking out.</li>
+      <li>Mount bumpers securely and legally.</li>
+    </ul>
+  </section>
+</section>
+
+<section>
+  <section>
+    <span class="tag">6. Fabrication Accuracy</span>
+    <h2>Design around the tools we actually have</h2>
+    <div class="bar"></div>
+    <p>Good fabrication starts in CAD. Accurate holes, square tube cuts, and repeatable jigs save hours during assembly.</p>
+  </section>
+  <section>
+    <h2>Buildable design choices</h2>
+    <div class="two">
+      <ul><li>Repeated hole patterns</li><li>Simple tube cuts</li><li>Few weird angles</li><li>Room for drills, riveters, wrenches, and hands</li><li>Parts easy to replace</li></ul>
+      <ul><li>Jigs for repeated drilling</li><li>Clamp before drilling</li><li>Match-drill paired plates</li><li>CNC/router/laser/template bearing holes</li><li>Check squareness during assembly</li></ul>
+    </div>
+  </section>
+  <section>
+    <h2>Fabrication workflow</h2>
+    <div class="diagram"><div class="box">CAD drawing</div><div class="arrow"></div><div class="box">Cut</div><div class="arrow"></div><div class="box">Deburr</div><div class="arrow"></div><div class="box">Clamp</div></div>
+    <div class="diagram"><div class="box">Drill</div><div class="arrow"></div><div class="box">Rivet / bolt</div><div class="arrow"></div><div class="box">Check square</div><div class="arrow"></div><div class="box">Label spare</div></div>
+  </section>
+  <section class="activity">
+    <span class="tag">Hands-on</span>
+    <h2>Tube accuracy challenge</h2>
+    <p>Teams receive the same tube pattern. Score it on cut length, hole spacing, deburring, and squareness.</p>
+    <p class="small">Reflection: Which step created the biggest error?</p>
+  </section>
+</section>
+
+<section>
+  <section>
+    <span class="tag">7. Weight Distribution</span>
+    <h2>Low, centered, secure</h2>
+    <div class="two">
+      <div class="panel"><h3>Usually good</h3><ul><li>Battery low</li><li>Major masses near center</li><li>Even load on swerve modules</li><li>Heavy parts securely mounted</li></ul></div>
+      <div class="panel"><h3>Watch closely</h3><ul><li>Arm pivots</li><li>Elevator uprights</li><li>Game piece storage</li><li>Thick plates and heavy material choices</li></ul></div>
+    </div>
+  </section>
+  <section>
+    <h2>Why it matters</h2>
+    <ul>
+      <li>High weight can make a tall robot tip.</li>
+      <li>Weight too far forward or backward can lift wheels.</li>
+      <li>Uneven swerve loading can make driving inconsistent.</li>
+      <li>Loose heavy parts become safety hazards.</li>
+    </ul>
+  </section>
+</section>
+
+<section>
+  <section>
+    <span class="tag">8. CAD, CAD, CAD</span>
+    <h2>CAD should answer practical questions</h2>
+    <div class="bar gray"></div>
+    <p>Use CAD to check dimensions, field constraints, mechanism travel, bumper space, electronics, battery location, and access before fabrication starts.</p>
+  </section>
+  <section>
+    <h2>CAD checklist for 5041</h2>
+    <div class="two">
+      <ul class="checklist"><li>Full frame modeled</li><li>Bumpers included</li><li>Major electronics included</li><li>Battery included</li><li>Frame perimeter checked</li></ul>
+      <ul class="checklist"><li>Mechanism travel checked</li><li>Bolt/rivet access checked</li><li>Assemblies used to test movement</li><li>Standard tube/gusset libraries used</li><li>Parts named clearly</li></ul>
+    </div>
+  </section>
+  <section class="activity">
+    <span class="tag">CAD Review</span>
+    <h2>Red Team / Blue Team</h2>
+    <p>One group presents a mechanism. The other group tries to find failure points before anything is cut.</p>
+    <ul><li>Where does it flex?</li><li>How is it repaired?</li><li>Where do wires go?</li><li>Does it leave bumper and inspection space?</li></ul>
+  </section>
+</section>
+
+<section>
+  <span class="tag">Knowledge Check</span>
+  <h2>Quick questions</h2>
+  <ol>
+    <li>What is the difference between strong and stiff?</li>
+    <li>Why should bumpers be designed early?</li>
+    <li>Why should bearing holes be made with the most accurate process available?</li>
+    <li>Name one reason a robot may drive poorly because of weight distribution.</li>
+    <li>What part of your current design would be hardest to replace between matches?</li>
+  </ol>
+</section>
+
+<section>
+  <span class="tag">Final Team Challenge</span>
+  <h2>Design Review Gate</h2>
+  <p>Before a subsystem is approved for fabrication, the student lead must show:</p>
+  <div class="three">
+    <div class="panel"><h3>Structure</h3><p>Load path, stiffness, impact plan.</p></div>
+    <div class="panel"><h3>Fabrication</h3><p>Material, hole method, tools, jigs, assembly sequence.</p></div>
+    <div class="panel"><h3>Service</h3><p>Access, spares, labels, repair time.</p></div>
+  </div>
+</section>
+
+<section class="center redCorner">
+  <h1 class="cytitle">Build it right.</h1>
+  <div class="stripe"></div>
+  <h2>Strong • Stiff • Light • Accurate • Repairable</h2>
+  <p>5041 CyBear Robotics</p>
+  <div class="foot"><span>Everyone has a place here</span><span>End of module</span></div>
+</section>
+
+</div></div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'slide',
+    backgroundTransition: 'fade',
+    plugins: [ RevealMarkdown, RevealNotes ]
+  });
+</script>
+</body>
+</html>
